@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAM WARDEN – System analizy i optymalizacji CNC AMADA</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --warning-border: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .download-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-download:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #e2e8f0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 12px 24px;
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .features-grid li {
+            position: relative;
+            padding-left: 24px;
+            color: #e2e8f0;
+            font-size: 0.98rem;
+        }
+
+        .features-grid li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .notice {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .notice strong {
+            color: #fbbf24;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 30px 0 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.9rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="logo.png" alt="Logo CAM WARDEN" class="logo">
+        <h1>CAM WARDEN</h1>
+        <div class="subtitle">System analizy, optymalizacji i wsparcia operatora CNC AMADA</div>
+        
+        <div class="download-box">
+            <a href="setup.exe" class="btn-download" download>Pobierz CAM WARDEN (Windows)</a>
+            <span class="meta-info">System: Windows 10 / 11 • Rozmiar pakietu: 15,5 MB • Automatyczne aktualizacje</span>
+        </div>
+    </header>
+
+    <section class="card">
+        <h2>O programie</h2>
+        <p>
+            <strong>CAM WARDEN</strong> jest autorskim programem przeznaczonym do analizy, korekty, optymalizacji i przygotowania programów G-code dla wykrawarek rewolwerowych CNC AMADA.
+        </p>
+        <p>
+            Program analizuje kod nie tylko jako tekst, ale również jako rzeczywisty proces technologiczny. Uwzględnia kolejność narzędzi, geometrię ruchów, repozycje arkusza, położenie zacisków, martwe strefy, przejazdy jałowe, kierunki obróbki oraz ograniczenia wynikające z budowy maszyny.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Główne możliwości CAM WARDEN</h2>
+        <ul class="features-grid">
+            <li>Analiza i automatyczna korekta kodu G-code</li>
+            <li>Normalizacja programów G91 do układu absolutnego G90</li>
+            <li>Kontrola zgodności trajektorii po normalizacji współrzędnych</li>
+            <li>Uzupełnianie brakujących współrzędnych X/Y</li>
+            <li>Tworzenie siatek G36/G37 z pojedynczych punktów</li>
+            <li>Optymalizacja kierunków G36/G37 oraz G66</li>
+            <li>Tworzenie i optymalizacja cykli G28</li>
+            <li>Optymalizacja kolejności pojedynczych punktów XY</li>
+            <li>Podział i segregacja bloków narzędziowych</li>
+            <li>Globalna optymalizacja kolejności narzędzi i ich tras</li>
+            <li>Analiza i optymalizacja pracy przez repozycje G27</li>
+            <li>Optymalizacja G70 przed repozycją materiału</li>
+            <li>Analiza położenia zacisków i ich martwych stref</li>
+            <li>Planowanie bezpiecznego rozmieszczenia operacji względem zacisków</li>
+            <li>Optymalizacja kodów M oraz bezpiecznego zakończenia programu</li>
+            <li>Analiza narzędzi INDEX i końcowego powrotu rewolweru</li>
+            <li>Baza narzędzi ToolBase powiązana z rzeczywistymi stacjami rewolweru</li>
+            <li>Estymacja czasu wykonania programu na podstawie ruchów maszyny</li>
+            <li>Porównanie czasu programu CAM i programu zoptymalizowanego</li>
+            <li>Raportowanie zmian, oszczędności czasu i wyników optymalizacji</li>
+            <li>Prowadzenie statystyk wykonanych optymalizacji</li>
+            <li>Automatyczne monitorowanie folderów z programami CAM</li>
+            <li>Automatyczne tworzenie plików Corrected.NC oraz raportów</li>
+            <li>Ręczna edycja i tworzenie nowych programów G-code</li>
+            <li>Podgląd geometrii programu w module Preview2D</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Bezpieczeństwo i rola w procesie</h2>
+        <p>
+            CAM WARDEN został zaprojektowany jako dodatkowa warstwa kontroli pomiędzy programem CAM a maszyną. Jego zadaniem jest wykrywać miejsca, które można poprawić, ograniczać zbędne ruchy i pomagać operatorowi uzyskać bezpieczniejszy, bardziej przewidywalny i wydajniejszy proces.
+        </p>
+        <p>
+            Program nie zastępuje wiedzy i doświadczenia operatora. Automatyzuje natomiast analizę, która przy złożonych programach byłaby czasochłonna lub trudna do wykonania ręcznie.
+        </p>
+
+        <div class="notice">
+            <strong>Ważna uwaga technologiczna:</strong>
+            Każdy zmodyfikowany program powinien zostać zweryfikowany przed uruchomieniem na maszynie.
+        </div>
+
+        <div class="notice" style="border-left-color: #38bdf8; background-color: rgba(56, 189, 248, 0.08);">
+            <strong style="color: #38bdf8;">Informacja o instalacji w systemie Windows:</strong>
+            Ponieważ jest to niezależne oprogramowanie bez komercyjnego certyfikatu korporacyjnego, funkcja Windows SmartScreen może wyświetlić komunikat „System Windows ochronił ten komputer”. Aby zainstalować program, kliknij <em>Więcej informacji</em>, a następnie <em>Uruchom mimo to</em>.
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 CAM WARDEN • Wszelkie prawa zastrzeżone
+    </footer>
+</div>
+
+</body>
+</html>
